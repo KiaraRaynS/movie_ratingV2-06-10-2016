@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie</title>
+</head>
+<body>
+  <h3>{{ movie.title }}</h3>
+  <hr></hr>
+  <ul>
+  <li>{{ movie.release_date }}</li>
+  <li><a href="{{ movie.imdb }}"> IMDB Page</a></li>
+  <li><p>Number of ratings:{{ ratings_count }}</p></li>
+  <li><p>Average rating:{{ ratings_avg }} </p>
+    <p> Ratings:</p>
+    <ul>
+      {% for ratings in ratings_list %}
+      <li> {{ ratings.rating }} </li>
+      {% endfor %}
+    </ul>
+  </ul>
+</body>

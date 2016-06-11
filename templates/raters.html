@@ -7,9 +7,10 @@
 <body>
   <h3>Rater Page</h3>
   {% for rater in raters_list %}
+  <p> ID: {{ rater.id }} </p>
   <ul>
-    <li>Id: {{ rater.id }}</li>
-    <a href="{{ rater.id }}/">Rater Page</a>
+    <li><a href="{{ rater.id }}/">Rater Page</a></li>
+    <hr></hr>
   </ul>
   {% endfor %}
 </body>
