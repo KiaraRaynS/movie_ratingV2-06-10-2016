@@ -5,8 +5,12 @@
 <title>Movies</title>
 </head>
 <body>
-  <h3>Movies listing</h3>
+  <h1>Movies listing</h1>
   {% for movie in movies_list %}
-  <p> {{ movie }} </p>
+  <hr> {{ movie }} </hr>
+  <ul>
+  <li><a href="{{ movie.imdb }}">Imdb Page</a></li>
+  <li><a href="{{ movie.id }}">Movie Page</a></li>
+  </ul>
   {% endfor %}
 </body>

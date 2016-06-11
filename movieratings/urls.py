@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+# view list of class pages
 from movierating.views import view_index, view_movies, view_raters
+# view instance of class page
+from movierating.views import view_rater
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', view_index),
-    url(r'movies/', view_movies),
-    url(r'^raters/', view_raters)
+    url(r'movies/$', view_movies),
+    url(r'^raters/$', view_raters),
+    url(r'^raters/(?P<rater_id>\w+)/$', view_rater)
+
 ]

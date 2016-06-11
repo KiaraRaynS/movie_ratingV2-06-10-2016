@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raters</title>
+</head>
+<body>
+  <h3>Rater</h3>
+  {% for rater in rater %}
+    <b>Id: {{ rater.id }}</b>
+  <ul>
+    <li>Age: {{ rater.age  }}</li>
+    <li>Gender: {{ rater.gender }}</li>
+    <li>Occupation: {{ rater.occupation }}</li>
+    <li>Zip Code: {{ rater.zip_code }}</li>
+    <li>Numver of movies rated: {{ len(movies_rated) }}</li>
+    <li>Movies Rated: </li>
+      {% for movie in movies_rated %}
+      <ul>
+        <li>{{ movie.title }}</li>
+        <li>Rating {{ movie.rating }}</li>
+      </ul>
+      {% endfor %}
+  </ul>
+  {% endfor %}
+</body>

@@ -5,12 +5,11 @@
   <title>Raters</title>
 </head>
 <body>
-  <h3>Raters</h3>
-  {% for rater in raters_list%}
+  <h3>Rater Page</h3>
+  {% for rater in raters_list %}
   <ul>
-    <b>Id: {{ rater.id }}</b>
-    <li>Age: {{ rater.age  }}</li>
-    <li>Gender: {{ rater.gender }}</li>
+    <li>Id: {{ rater.id }}</li>
+    <a href="{{ rater.id }}/">Rater Page</a>
   </ul>
   {% endfor %}
 </body>
