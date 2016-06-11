@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raters</title>
+</head>
+<body>
+  <h3>Raters</h3>
+  {% for rater in raters_list%}
+  <ul>
+    <b>Id: {{ rater.id }}</b>
+    <li>Age: {{ rater.age  }}</li>
+    <li>Gender: {{ rater.gender }}</li>
+  </ul>
+  {% endfor %}
+</body>
