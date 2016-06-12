@@ -19,13 +19,14 @@ from django.contrib import admin
 from movierating.views import view_index, view_movies, view_raters
 # view instance of class page
 from movierating.views import view_rater, view_movie
+from movierating.views import top_movies
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', view_index),
+    url(r'^$', view_index, name='index'),
     url(r'movies/$', view_movies),
     url(r'^raters/$', view_raters),
+    url(r'^toplist/$', top_movies),
     url(r'^raters/(?P<rater_id>\w+)/$', view_rater),
-    url(r'^movies/(?P<movie_id>\w+)/$', view_movie)
-
+    url(r'^movies/(?P<movie_id>\w+)/$', view_movie),
 ]

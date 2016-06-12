@@ -6,21 +6,17 @@
 </head>
 <body>
   <h3>Rater</h3>
-  {% for rater in rater %}
     <b>Id: {{ rater.id }}</b>
   <ul>
     <li>Age: {{ rater.age  }}</li>
     <li>Gender: {{ rater.gender }}</li>
     <li>Occupation: {{ rater.occupation }}</li>
     <li>Zip Code: {{ rater.zip_code }}</li>
-    <li>Numver of movies rated: {{ movies_count }}</li>
+    <li>Number of movies rated: {{ movies_count }}</li>
     <li>Movies Rated: </li>
-      {% for movie in movies_rated %}
-      <ul>
-        <li>{{ movie.title }}</li>
-        <li>Rating {{ movie.rating }}</li>
-      </ul>
-      {% endfor %}
+    {% for movie in movies %}
+    <li><a href="{% url "index" %}movies/{{ movie.id }}"> {{ movie }}</a></li>
+    {% endfor %}
+    <li><a href="{% url "index" %}">Index</a></li>
   </ul>
-  {% endfor %}
 </body>
