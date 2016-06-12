@@ -5,6 +5,8 @@
   <title>Movie</title>
 </head>
 <body>
+  <p><a href="{% url "index" %}">Return to Index</a></p>
+  <p><a href="{% url "index" %}movies/">Return to Movies List</a></p>
   <h3>{{ movie.title }}</h3>
   <hr></hr>
   <ul>

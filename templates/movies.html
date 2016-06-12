@@ -5,6 +5,7 @@
 <title>Movies</title>
 </head>
 <body>
+  <p><a href="{% url "index" %}">Return to Index</a></p>
   <h1>Movies listing</h1>
   {% for movie in movies_list %}
   <hr> {{ movie }} </hr>
