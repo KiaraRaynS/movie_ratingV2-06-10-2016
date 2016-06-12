@@ -15,7 +15,8 @@
     <p> Ratings:</p>
     <ul>
       {% for ratings in ratings_list %}
-      <li> {{ ratings.rating }} </li>
+      <li>Rating: {{ ratings.rating }} </li>
+      <li>Rater : <a href="{% url "index" %}raters/{{ ratings.rater.id }}"> {{ ratings.rater.id }}</a></li>
       {% endfor %}
     </ul>
   </ul>

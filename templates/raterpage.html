@@ -17,6 +17,5 @@
     {% for movie in movies %}
     <li><a href="{% url "index" %}movies/{{ movie.id }}"> {{ movie }}</a></li>
     {% endfor %}
-    <li><a href="{% url "index" %}">Index</a></li>
   </ul>
 </body>

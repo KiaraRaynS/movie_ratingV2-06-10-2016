@@ -52,6 +52,8 @@ def view_rater(request, rater_id):
 
 def view_movie(request, movie_id):
     from django.db.models import Avg
+    movie = Movie.objects.get(id=movie_id)
+    raters = list(Rater.objects.filter(movierating__movie=movie_id))
     context = {
             "movie": (Movie.objects.get(id=movie_id)),
             "ratings_list": (MovieRating.objects.filter(movie=movie_id)),
