@@ -29,14 +29,13 @@ def view_raters(request):
 
 
 def view_rater(request, rater_id):
-    rater = Rater.objects.get(id=rater_id)
     MovieRating.objects.filter(rater__id=rater_id)
     movies = list(Movie.objects.filter(movierating__rater=rater_id))
     context = {
             "rater": (Rater.objects.get(id=rater_id)),
             "movies_rated": (MovieRating.objects.filter(rater=rater_id)),
             "movies_count": (MovieRating.objects.filter(rater=rater_id).count()),
-            "movies": (Movie.objects.filter(movierating__rater=rater_id))
+            "movies": (Movie.objects.filter(movierating__rater=rater_id)),
              }
     return render(request, "raterpage.html", context)
 
@@ -65,8 +64,9 @@ def view_movie(request, movie_id):
 
 def top_movies(request):
     from django.db.models import Avg
-    movies = Movie
+    MovieRating.objects.prefetch_related("movie").aggregate(Avg("rating"))
     context = {
-            "movieratings": (MovieRating.objects.filter(movie=movies.id).aggregate(Avg('rating')))
-            }
+            "movies": list(MovieRating.objects.all()),
+            # "movieratings": (MovieRating.objects.all().prefetch_related("movie").aggregate(Avg("rating")))
+              }
     return render(request, "topmovies.html", context)

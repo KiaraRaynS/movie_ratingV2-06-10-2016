@@ -5,9 +5,9 @@
  <title>Top Movies</title>
 </head>
 <body>
-  <h2>Top Movies will go here.</h3>
+  <p><a href="{% url "index" %}">Return to Index</a></p>
+  <h2>Top 20 Movies will go here.</h3>
   <hr></hr>
-  {% for movie in movies %}
-  <p>{{ movie.title }}</p>
+  {% for movierating in movieratings %}
   {% endfor %}
 </body>

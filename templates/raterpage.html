@@ -18,6 +18,8 @@
     <li>Movies Rated: </li>
     {% for movie in movies %}
     <li><a href="{% url "index" %}movies/{{ movie.id }}"> {{ movie }}</a></li>
+    <!-- Need to fix this -->
+    <li>Rating: {{ movierating.rating }} </li>
     {% endfor %}
   </ul>
 </body>
